@@ -44,11 +44,19 @@ describe('server.js', () => {
 
     describe('DELETE /books', () => {
 
-        it.skip('should return 200', async () => {
-            const res = await request(server).delete('/books');
+        it('should error -404- without book id', async () => {
+            const res = await request(server).delete('/:id');
 
-            expect(res.status).toBe(200);
+            expect(res.status).toBe(404);
         });
+
+        it('should return a 200 ok', async () => {
+            const bookId = 2;
+
+            const res = await request(server).delete(`/${bookId}`);
+            
+            expect(res.status).toBe(200);
+        })
     });
 
 });
