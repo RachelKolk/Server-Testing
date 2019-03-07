@@ -17,9 +17,9 @@ describe('books model', () => {
             let book = await Books.remove({title: 'The Witches'});
 
             const bookTitle = ['The Witches'];
-            
+
             expect(db).toEqual(expect.not.arrayContaining(bookTitle),
             );
         });
-    })
-})
+    });
+});
