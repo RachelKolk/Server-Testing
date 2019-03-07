@@ -11,4 +11,11 @@ describe('books model', () => {
             expect(book.title).toBe('The Witches');
         });
     });
+
+    describe('remove()', () => {
+        it('should remove the title from the books database', async () => {
+            let book = await Books.remove({title: 'The Witches'});
+            expect(db).not.arrayContaining(book.title);
+        });
+    })
 })
