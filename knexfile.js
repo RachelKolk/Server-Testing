@@ -8,14 +8,21 @@ module.exports = {
       filename: './data/books.db3',
     },
     useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: {
+      directory: './data/seeds',
+    },
   },
+
 
 
 
   testing: {
     client: 'sqlite',
     useNullAsDefault: true,
-  }
+  },
 
   production: {
     client: 'postgresql',
