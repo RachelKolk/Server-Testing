@@ -24,6 +24,14 @@ describe('server.js', () => {
         });
     });
 
-
+    describe('CREATE /books', () => {
+        it('responds with json', () => {
+            return request(server)
+              .post('/books')
+              .send({title: 'Small Favor'})
+              .set('Accept', 'application/json')
+              .expect(200)
+        })
+    })
 
 });
